@@ -1,27 +1,30 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * rev_string - reverses a string
- * @s: pointer to a string
- *
- *Return: void
+ * rev_string - reverses a string.
+ * @s: input string.
+ * Return: no return.
  */
-
 void rev_string(char *s)
 {
-	char temp;
-	int i, j, k;
+	int count = 0, i, j;
+	char *str, temp;
 
-	k = strlen(s);
-
-	for (i = k - 1; i > (k/2); --i)
+	while (count >= 0)
 	{
-		for (j = 0; j < (k/2); ++j)
+		if (s[count] == '\0')
+			break;
+		count++;
+	}
+	str = s;
+
+	for (i = 0; i < (count - 1); i++)
+	{
+		for (j = i + 1; j > 0; j--)
 		{
-			temp = s[i];
-			s[i] = s[j];
-			s[j] = temp;
+			temp = *(str + j);
+			*(str + j) = *(str + (j - 1));
+			*(str + (j - 1)) = temp;
 		}
 	}
 }
