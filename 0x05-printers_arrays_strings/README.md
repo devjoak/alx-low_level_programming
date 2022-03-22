@@ -1,1 +1,0 @@
-readme for 0x05-printers_arrays_strings
